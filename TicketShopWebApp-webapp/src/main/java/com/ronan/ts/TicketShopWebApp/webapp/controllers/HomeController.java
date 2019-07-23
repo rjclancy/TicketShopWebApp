@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class HomeController {
 
   /**
-   *  Returns Home page
+   * Returns Home page
+   *
    * @param model
    * @return
    */
-  @PostMapping("/home")
-  public String home(Model model) {
+  @PostMapping("/")
+  public String home(final Model model) {
     return "index";
   }
 }
