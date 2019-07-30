@@ -1,0 +1,21 @@
+.header{
+    padding:20px;
+    display: contents;
+}
+
+.header-buttons{
+    float:right;
+}
+
+.header-btn{
+    margin: 0 10px;
+}
+
+.card-image{
+    width:100%;
+    overflow:hidden;
+}
+
+.card-container{
+    margin-top: 24px;
+}
