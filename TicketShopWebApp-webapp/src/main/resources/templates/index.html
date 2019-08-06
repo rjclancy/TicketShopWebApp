@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="common/header :: common-header"/>
+<head th:replace="fragments/header :: fragment-header"/>
 <body>
     <div class="container my-5">
         <div class="row">
-            <div class="header col-md-12">
-                <div class="col-sm-8">
-                    <h1>TicketShop</h1>
-                </div>
-                <div class="header-buttons col-sm-4">
-                    <a href="#" class="header-btn btn btn-info">ABOUT</a>
-                    <a href="#" class="header-btn btn btn-light">INFO</a>
-                    <a href="#" class="header-btn btn btn-dark">LOGIN</a>
-                </div>
-            </div>
+            <head th:replace="fragments/header-nav :: fragment-header-nav"/>
             <div th:each="event : ${events}" class="col-sm-4" >
                 <div class="card card-container">
                     <img  class="card-image" th:src="@{${'/images/' + event.imgLocation}}" alt="Card image" />
@@ -22,7 +13,7 @@
                         <p class="card-text" th:text="${event.eventDate}"></p>
                         <p class="card-text" th:text="${event.eventDesc}"></p>
                         <p class="card-text" th:text="${event.ticketsAvailable}"></p>
-                        <a href="#" class="btn btn-primary">But Ticket &rarr;</a>
+                        <a th:href="@{'/event/'+${event.id}}" class="btn btn-primary">View Ticket &rarr;</a>
                     </div>
                 </div>
             </div>

@@ -30,7 +30,7 @@ public class EventService {
     log.info("Sending Purchase ticket event...");
     Response<Void> response = ticketShopEventClientApiUtils.sendPurchaseTicketEvent(purchaseTicketEvent).execute();
     if (!response.isSuccessful()) {
-      log.error("Something went wrong send event");
+      log.error("Something went wrong sending event");
     }
     log.info("Successfully sent event");
   }
@@ -40,6 +40,16 @@ public class EventService {
     Response<List<EventDto>> response = ticketShopServiceClientApiUtils.getEvents().execute();
     if (!response.isSuccessful()) {
       log.error("Something went wrong getting events");
+    }
+    log.info("Successfully retrieved events");
+    return response.body();
+  }
+
+  public EventDto getEvent(final Long id) throws IOException {
+    log.info("Getting ticket event...");
+    Response<EventDto> response = ticketShopServiceClientApiUtils.getEvent(id).execute();
+    if (!response.isSuccessful()) {
+      log.error("Something went wrong getting event");
     }
     log.info("Successfully retrieved event");
     return response.body();
