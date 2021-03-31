@@ -27,7 +27,7 @@
 		<docker.image.prefix>${project.artifactId}</docker.image.prefix>
 		<lombok.version>1.18.8</lombok.version>
 		<model-mapper.version>2.3.2</model-mapper.version>
-		<guava.version>28.0-jre</guava.version>
+		<guava.version>29.0-jre</guava.version>
 		<mockito.version>2.23.4</mockito.version>
 		<ticketshopeventpublisher-client.version>0.0.1-SNAPSHOT</ticketshopeventpublisher-client.version>
 	</properties>
